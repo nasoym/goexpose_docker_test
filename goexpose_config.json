@@ -1,0 +1,43 @@
+{
+  "port": 9900,
+  "pretty_json": true,
+  "endpoints": [
+    {
+      "path": "/file",
+      "methods":{
+        "GET": {
+          "type":"filesystem",
+          "config": {
+            "output":"raw",
+            "file": "/tmp/hello.txt"
+          }
+        }
+      }
+    },
+    {
+      "path": "/",
+      "methods": {
+        "POST": {
+          "type": "shell",
+          "config": {
+            "output":"raw",
+            "commands": [
+              {
+                "command": "echo 'url>{{.url}}<'"
+              },
+              {
+                "command": "echo 'request >{{.request}}<'"
+              },
+              {
+                "command": "echo 'request method >{{.request.method}}<'"
+              },
+              {
+                "command": "echo 'request body>{{.request.body}}<'"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
