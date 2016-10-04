@@ -1,0 +1,8 @@
+goexpose:
+    image: nasoym/goexpose
+    ports:
+      - 8080:8080
+    volumes:
+      - ./goexpose.json:/scripts/goexpose.json
+      - ./hello.txt:/tmp/hello.txt
+    command: "goexpose -logtostderr --config /scripts/goexpose.json"

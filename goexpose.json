@@ -1,9 +1,9 @@
 {
-  "port": 9900,
+  "port": 8080,
   "pretty_json": true,
   "endpoints": [
     {
-      "path": "/file",
+      "path": "/hello",
       "methods":{
         "GET": {
           "type":"filesystem",
@@ -15,7 +15,7 @@
       }
     },
     {
-      "path": "/",
+      "path": "/body",
       "methods": {
         "POST": {
           "type": "shell",
